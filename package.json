@@ -1,0 +1,16 @@
+{
+  "name": "task-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "User Management & Task Tracker - full-stack monorepo",
+  "scripts": {
+    "dev": "concurrently -k -n backend,frontend -c blue,green \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "seed": "npm run prisma:seed --prefix backend",
+    "build": "npm run build --prefix frontend",
+    "test": "concurrently -k -s first -n backend,frontend -c blue,green \"npm test --prefix backend\" \"npm test --prefix frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

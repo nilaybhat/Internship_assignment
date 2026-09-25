@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment - NEVER commit secrets
+.env
+.env.local
+.env.test
+.env.test.local
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+coverage/
+
+# Prisma local database files (SQLite fallback)
+prisma/*.db
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Misc
+*.local
+
+# Assignment/internal docs (kept out of version control)
+SKILLS.md
+backend_assignment1.0.docx
+frontend_assignment1.0.docx
