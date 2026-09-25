@@ -113,6 +113,16 @@ CORS_ORIGIN=*
 >
 > **Never commit `.env`** — the `.gitignore` already excludes it, and a live
 > Supabase connection string is a real credential.
+>
+> **Deploying to Vercel (or any serverless host)?** Vercel functions are IPv4-only
+> and cannot reach Supabase's direct host. Set `DATABASE_URL` to the **transaction
+> pooler** string (port 6543) with `pgbouncer=true`:
+>
+> ```
+> postgresql://postgres.<PROJECT_REF>:<DATABASE_PASSWORD>@aws-0-<REGION>.pooler.supabase.com:6543/postgres?pgbouncer=true&connection_limit=1
+> ```
+>
+> Keep the direct connection (port 5432) for local development and migrations.
 
 ---
 
